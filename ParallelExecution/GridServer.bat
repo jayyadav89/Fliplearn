@@ -1,0 +1,1 @@
+java -jar C:\Users\satyaprakash\Desktop\FlipLearn_Education/jars/selenium-server-standalone-2.50.1.jar -host 127.0.0.1 -port 4444 -role hub -nodeTimeout 600

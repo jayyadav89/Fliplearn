@@ -1,0 +1,1 @@
+C:/Users/Appium/node.exe C:/Users/Appium/node_modules/appium/bin/appium.js --nodeconfig C:\Users\satyaprakash\Desktop\FlipLearn_Education/ParallelExecution/nodeConfig_1.json -p 4733 -U 192.168.16.101:5555

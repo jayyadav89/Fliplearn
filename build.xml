@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="run" name="FlipLearn_Education">
+   <basename property="ant.project.name" file="${basedir}" />
+   <property environment="env" />
+   <property name="Common_Jars" value="${env.Common_Jars}" />
+   <property name="classes.dir" value="build" />
+   <property name="report.dir" value="test-output" />
+   <property name="logs.dir" value="logs" />
+   <property name="ECLIPSE_HOME" value="../../../Desktop/eclipse" />
+   <property name="debuglevel" value="source,lines,vars" />
+   <property name="target" value="1.7" />
+   <property name="source" value="1.7" />
+   <path id="FlipLearn_Education.classpath">
+   	<pathelement location="build"/>
+   	        <pathelement location="jars/activation-1.0.2.jar"/>
+        <pathelement location="jars/commons-codec-1.5.jar"/>
+        <pathelement location="jars/commons-io-2.5.jar"/>
+        <pathelement location="jars/commons-lang3-3.4-javadoc.jar"/>
+        <pathelement location="jars/commons-lang3-3.4.jar"/>
+        <pathelement location="jars/commons-logging-1.1.jar"/>
+        <pathelement location="jars/dom4j-1.6.1.jar"/>
+        <pathelement location="jars/gson-2.7.jar"/>
+        <pathelement location="jars/jai-imageio-core-1.3.1.jar"/>
+        <pathelement location="jars/java-client-4.1.1.jar"/>
+        <pathelement location="jars/javaocr-core-1.0-sources.jar"/>
+        <pathelement location="jars/jcommander-1.7.jar"/>
+        <pathelement location="jars/jna-4.1.0.jar"/>
+        <pathelement location="jars/jsch-0.1.49.jar"/>
+        <pathelement location="jars/json-simple-1.1.1.jar"/>
+        <pathelement location="jars/jul-to-slf4j-1.7.21.jar"/>
+        <pathelement location="jars/junit-3.8.1.jar"/>
+        <pathelement location="jars/lept4j-1.2.3.jar"/>
+        <pathelement location="jars/log4j-1.2.13.jar"/>
+        <pathelement location="jars/logback-classic-1.1.7.jar"/>
+        <pathelement location="jars/logback-core-1.1.7.jar"/>
+        <pathelement location="jars/mail.jar"/>
+        <pathelement location="jars/mysql-connector-java-5.1.22-bin.jar"/>
+        <pathelement location="jars/poi-3.10-FINAL-20140208.jar"/>
+        <pathelement location="jars/poi-3.8-beta5-20111217.jar"/>
+        <pathelement location="jars/poi-examples-3.10-FINAL-20140208.jar"/>
+        <pathelement location="jars/poi-examples-3.8-beta5-20111217.jar"/>
+        <pathelement location="jars/poi-excelant-3.10-FINAL-20140208.jar"/>
+        <pathelement location="jars/poi-excelant-3.8-beta5-20111217.jar"/>
+        <pathelement location="jars/poi-ooxml-3.10-FINAL-20140208.jar"/>
+        <pathelement location="jars/poi-ooxml-3.8-beta5-20111217.jar"/>
+        <pathelement location="jars/poi-ooxml-schemas-3.10-FINAL-20140208.jar"/>
+        <pathelement location="jars/poi-ooxml-schemas-3.8-beta5-20111217.jar"/>
+        <pathelement location="jars/poi-scratchpad-3.10-FINAL-20140208.jar"/>
+        <pathelement location="jars/poi-scratchpad-3.8-beta5-20111217.jar"/>
+        <pathelement location="jars/saxon-8.7.jar"/>
+        <pathelement location="jars/saxon8-dom.jar"/>
+        <pathelement location="jars/SaxonLiaison.jar"/>
+        <pathelement location="jars/slf4j-api-1.7.21.jar"/>
+        <pathelement location="jars/stax-api-1.0.1.jar"/>
+        <pathelement location="jars/tess4j-3.2.1.jar"/>
+        <pathelement location="jars/testng-6.8.5-sources.jar"/>
+        <pathelement location="jars/testng-6.8.5.jar"/>
+        <pathelement location="jars/xmlbeans-2.3.0.jar"/>
+        <pathelement location="jars/selenium-server-standalone-3.5.3.jar"/>
+        <pathelement location="jars/guava-21.0.jar"/>
+   </path>
+   
+   <path id="classes">
+      <pathelement location="build" />
+   </path>
+   <target name="run">
+   	<echo message="Common Resources Path == ${Common_Jars}" />
+      <antcall target="ClearScrap" />
+      <record name="./AutomationReports/finalReport/logs/logfile_${timestamp}.txt" action="start" append="false" />
+      <antcall target="CopyTestDataSheet" />
+      <antcall target="configSet" />
+      <antcall target="build" />
+      <antcall target="createXML" />
+      <antcall target="finalReport" />
+     <antcall target="backupPreProject" />
+      <antcall target="clean" />
+      <record name="./AutomationReports/finalReport/logs/logfile_${timestamp}.txt" action="stop" />
+   </target>
+   <target name="init">
+      <delete dir="${classes.dir}" />
+      <mkdir dir="${classes.dir}" />
+      <copy includeemptydirs="false" todir="${classes.dir}">
+         <fileset dir="src">
+            <exclude name="**/*.java" />
+         </fileset>
+      </copy>
+      <delete dir="${report.dir}" />
+      <mkdir dir="${report.dir}" />
+   </target>
+   <target name="clean">
+      <delete dir="${classes.dir}" />
+      
+      <!--delete file="Config.properties" /-->
+      <!--delete file="testng.xml" /-->
+   </target>
+   <target depends="build-project" name="build" />
+   <target depends="init" name="build-project">
+      <echo message="${ant.project.name}: ${ant.file}" />
+      <javac debug="true" debuglevel="${debuglevel}" destdir="${classes.dir}" includeantruntime="false" source="${source}" target="${target}" srcdir="src">
+         <src path="src" />
+         <classpath refid="FlipLearn_Education.classpath" />
+      </javac>
+   </target>
+   <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" />
+   <!--Define <testng> task -->
+   <taskdef name="testng" classname="org.testng.TestNGAntTask">
+      <classpath>
+         <pathelement location="./jars/testng-6.8.5.jar" />
+      </classpath>
+   </taskdef>
+   <!--Directory Name where the reports will be saved -->
+   <property name="testng.output.dir" value="testng_output" />
+   <!-- Take Backup for the present Project executed -->
+   <target name="backupPreProject">
+      <mkdir dir="../${ant.project.name}_Old_Reports/Execution_${timestamp}/AutomationReports/finalReport" />
+      <mkdir dir="../${ant.project.name}_Old_Reports/Execution_${timestamp}/TestDataSheets" />
+      <copy todir="../${ant.project.name}_Old_Reports/Execution_${timestamp}/AutomationReports/finalReport">
+         <fileset dir="AutomationReports/finalReport" includes="**" />
+      </copy>
+      <copy todir="../${ant.project.name}_Old_Reports/Execution_${timestamp}/TestDataSheets">
+         <!--fileset dir="TestDataSheetsForExecution" includes="**" /-->
+      	<fileset dir="src/config/${environment}" includes="**" />
+      </copy>
+   </target>
+   <!-- Copy Test Data Sheets -->
+   <target name="CopyTestDataSheet">
+      <mkdir dir="TestDataSheetsForExecution" />
+      <delete dir="TestDataSheetsForExecution" />
+      <copy todir="TestDataSheetsForExecution">
+         <fileset dir="BlankTestDataSheets" />
+      </copy>
+   </target>
+   <!-- Delete Old Scrap Report Before Starting Execution -->
+   <target name="ClearScrap">
+      <mkdir dir="./AutomationReports/finalReport" />
+      <echo message="Delete Old Scrap Report Before Starting Execution" />
+      <delete includeemptydirs="true">
+         <fileset dir="AutomationReports/finalReport" includes="**/*" />
+      </delete>
+      <mkdir dir="./AutomationReports/finalReport/screenshots" />
+      <mkdir dir="./AutomationReports/finalReport/${logs.dir}" />
+   </target>
+   <!-- Do Staging Entries if Environment is equal to Staging Remove if Environment is Live-->
+   <target name="SetStagingEntries">
+      <java classname="reporting.SetStagingEntries" failonerror="true" fork="yes">
+         <arg value="${environment}" />
+         <classpath refid="FlipLearn_Education.classpath" />
+      </java>
+   </target>
+	
+   <target name="configSet" depends="SetTypeofExecution">
+   	  <propertyfile file="Env_Config.properties">
+   	  <entry  key="project.env" value="${environment}"/>
+   	  </propertyfile>
+   </target>
+	
+	 <target name="stratGridDriver">
+	      <java classname="helper.GridDrivers" failonerror="true" fork="yes">
+	         <arg value="${pExecution}" />
+	         <classpath refid="FlipLearn_Education.classpath" />
+	      </java>
+	   </target>
+	
+	  <target name="configSet_dummy" depends="SetTypeofExecution">
+	      <touch file="Env_Config.properties" />
+	      <copy overwrite="true" file="Config_${environment}.properties" tofile="Env_Config.properties" />
+	   </target>
+	
+   <target name="SetTypeofExecution">
+      <mkdir dir="TestCaseCreation" />
+      <copy todir="TestCaseCreation">
+         <fileset dir="TestCaseCreation" />
+      </copy>
+   </target>
+   <target name="createXML">
+      <java classname="reporting.WriteXMLFile" failonerror="true" fork="yes">
+         <arg value="${environment}" />
+         <classpath refid="FlipLearn_Education.classpath" />
+      </java>
+   </target>
+   <target name="ModifyXML" depends="runTests">
+      <java classname="reporting.ModifyNGXML" failonerror="true" fork="yes">
+         <classpath refid="FlipLearn_Education.classpath" />
+      </java>
+   </target>
+   <target name="runTests">
+      <taskdef resource="testngtasks" classpathref="FlipLearn_Education.classpath" />
+      <testng outputDir="${report.dir}" haltonfailure="false" classpathref="FlipLearn_Education.classpath" configFailurePolicy="continue">
+         <xmlfileset dir="${basedir}" includes="testng.xml" />
+         <!--classfileset dir="${classes.dir}" includes="**/*.class" / -->
+      </testng>
+   </target>
+   <target name="finalReport" depends="ModifyXML">
+      <mkdir dir="AutomationReports/finalReport" />
+
+      <xslt in="${report.dir}/testng-results.xml" style="src/reporting/testng-results.xsl" out="AutomationReports/finalReport/index.html" processor="SaxonLiaison">
+         <param name="testNgXslt.outputDir" expression="${basedir}/AutomationReports/finalReport" />
+         <param name="testNgXslt.environment" expression="${environment}" />
+         <param name="testNgXslt.executiontype" expression="${executiontype}" />
+         <param name="testNgXslt.tagid" expression="${tagid}" />
+         <param expression="FAIL,SKIP,PASS,BY_CLASS,DESCRIPTION" name="testNgXslt.testDetailsFilter" />
+         <param name="testNgXslt.showRuntimeTotals" expression="true" />
+         <classpath refid="FlipLearn_Education.classpath" />
+      </xslt>
+   </target>
+	
+	<target name="SendMail" >
+		<java classname="reporting.SendMail" failonerror="true" fork="yes">
+		<classpath refid="FlipLearn_Education.classpath" />
+		</java>
+	</target>
+	
+	
+	
+   <!-- Remove Staging Entries back to Original -->
+   <target name="RemoveStagingEntries">
+      <java classname="reporting.RemoveStagingEntries" failonerror="true" fork="yes">
+         <arg value="${environment}" />
+         <classpath refid="FlipLearn_Education.classpath" />
+      </java>
+   </target>
+   <target name="openReport">
+      <exec executable="${browser}" spawn="yes">
+         <arg line="finalReport/index.html" />
+      </exec>
+   </target>
+   <tstamp>
+      <format property="timestamp" pattern="dd-MM-yyyy_HH-mm-ss" />
+   </tstamp>
+</project>

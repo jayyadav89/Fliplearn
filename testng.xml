@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="FlipLearn Education Suite" parallel="classes" thread-count="2">
+	<listeners>
+		<listener class-name="reporting.TakeScreenshot" />
+		<listener class-name="reporting.TestNGError" />
+	</listeners>
+	
+	
+	<test name="Test on Chrome">
+		  <classes>
+            <class name="testcases.LoginTestCases" />
+			<class name="testcases.AnnouncementTestCases" />
+		  </classes>
+	  </test>
+	
+	
+<!-- 	<test name="LoginTestCases" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.LoginTestCases"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="LN_001" /> -->
+<!-- 					<include name="LN_002" /> -->
+<!-- 					<include name="LN_003" /> -->
+<!-- 					<include name="LN_004"/> -->
+<!-- 					<include name="LN_005" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="AnnouncementTestCases" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.AnnouncementTestCases"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="ANNC_001" /> -->
+<!-- 					<include name="ANNC_002" /> -->
+<!-- 					<include name="ANNC_003" /> -->
+<!-- 					<include name="ANNC_004" /> -->
+<!-- 					<include name="ANNC_005" /> -->
+<!-- 					<include name="ANNC_006" /> -->
+<!-- 					<include name="ANNC_007" /> -->
+<!-- 					<include name="ANNC_008" /> -->
+<!-- 					<include name="ANNC_009" /> -->
+<!-- 					<include name="ANNC_010" /> -->
+<!-- 					<include name="ANNC_011" /> -->
+<!-- 					<include name="ANNC_012" /> -->
+<!-- 					<include name="ANNC_013" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="HomeWorkTestCase" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.HomeWorkTestCase"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="HW_001" /> -->
+<!-- 					<include name="HW_002" /> -->
+<!-- 					<include name="HW_003" /> -->
+<!-- 					<include name="HW_004" /> -->
+<!-- 					<include name="HW_005" /> -->
+<!-- 					<include name="HW_006" /> -->
+<!-- 					<include name="HW_007" /> -->
+<!-- 					<include name="HW_008" /> -->
+<!-- 					<include name="HW_009" /> -->
+<!-- 					<include name="HW_010" /> -->
+<!-- 					<include name="HW_011" /> -->
+<!-- 					<include name="HW_012" /> -->
+<!-- 					<include name="HW_013" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="GalleryTestCases" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.GalleryTestCases"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="GL_001" /> -->
+<!-- 					<include name="GL_002" /> -->
+<!-- 					<include name="GL_003" /> -->
+<!-- 					<include name="GL_004" /> -->
+<!-- 					<include name="GL_005" /> -->
+<!-- 					<include name="GL_006" /> -->
+<!-- 					<include name="GL_007" /> -->
+<!-- 					<include name="GL_008" /> -->
+<!-- 					<include name="GL_009" /> -->
+<!-- 					<include name="GL_010" /> -->
+<!-- 					<include name="GL_011" /> -->
+<!-- 					<include name="GL_012" /> -->
+<!-- 					<include name="GL_013" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="FeePaymentTestCases" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.FeePaymentTestCases"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="FP_001" /> -->
+<!-- 					<include name="FP_002" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="ProfileTestCases" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.ProfileTestCases"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="PRO_001" /> -->
+<!-- 					<include name="PRO_002" /> -->
+<!-- 					<include name="PRO_003" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="RoleBaseLoginTestCases" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.RoleBaseLoginTestCases"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="RBLT_001" /> -->
+<!-- 					<include name="RBLT_002" /> -->
+<!-- 					<include name="RBLT_003" /> -->
+<!-- 					<include name="RBLT_004" /> -->
+<!-- 					<include name="RBLT_005" /> -->
+<!-- 					<include name="RBLT_006" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="FeeTemplateTestCases" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.FeeTemplateTestCases"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="FTMP_01" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="ReShuffleClassTestCases" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.ReShuffleClassTestCases"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="RSFL_001" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="ContentAccess" preserve-order="true"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="testcases.ContentAccess"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="nonPurchaseContents" /> -->
+<!-- 					<include name="purchaseContents" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+</suite>

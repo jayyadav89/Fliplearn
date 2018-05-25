@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/testng-6.8.jar"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/java-client-2.1.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/AndroidAutomationGenericFunctions"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/selenium-server-standalone-2.42.2.jar"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/poi-3.8-beta5-20111217.jar"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/poi-examples-3.8-beta5-20111217.jar"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/poi-excelant-3.8-beta5-20111217.jar"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/poi-ooxml-3.8-beta5-20111217.jar"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/poi-ooxml-schemas-3.8-beta5-20111217.jar"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/poi-scratchpad-3.8-beta5-20111217.jar"/>
+	<classpathentry kind="lib" path="C:/Common_Resources/jars/polidea_test_runner_1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
